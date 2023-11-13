@@ -5,7 +5,8 @@
             [cheshire.core :refer :all]
             [honeysql.core :as sql]))
 
-
+(honey/format {:select [[[:count :*] :n]], :from [:user]})
+(honey/format {:select [[[:count [:distinct :status]] :n]] :from [:table]})
 (defn get-five-users []
   
   (let [query '{:select [:*], :from [:user], :limit :5}
@@ -22,9 +23,11 @@
     )
   )
 
-(honey/format {
+#_(honey/format {
                :select [:*] :from [:user] :where [:= :id 2]
 })
 (defn get-user-id [id]
-  (let [result (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id id]}))]
-    (generate-string result)))
+  (let [result (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id id]}))
+        _ (println result)]
+    (generate-string result)
+    ))

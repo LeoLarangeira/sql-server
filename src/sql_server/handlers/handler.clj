@@ -2,6 +2,7 @@
   (:require [compojure.core :refer :all]
             [sql-server.crud.insert :as i]
             [sql-server.crud.update :as up]
+            [sql-server.crud.delete :as del]
             [cheshire.core :refer :all]
             [faker.name :as fkn]
             [faker.address :as fka]
@@ -28,13 +29,17 @@
 
 (defn delete-user [id]
   ;this function will receive the id from the user and  will delete him
+  (let [deleted-user (del/delete-user! id)]
+    {:status 200
+     :headers  {"Content-Type" "application/json; charset=utf-8"}
+     :body (str "Usuário deletado com sucesso")})
   )
 
 (defn uptade-user-name [id name]
   (let [update-user (up/update-user! id name)
         new-user (search/get-user-id id)]
     
-    
+
     {:status 200
      :headers  {"Content-Type" "application/json; charset=utf-8"}
      :body new-user})

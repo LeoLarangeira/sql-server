@@ -3,7 +3,7 @@
             [sql-server.components.db :as db]
             [honeysql.format :as honey]))
 
-(honey/format {:update :user
+#_(honey/format {:update :user
              :set {:name name}
              :where [:= :id 2]})
 
