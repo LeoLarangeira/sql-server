@@ -9,7 +9,8 @@
                  [ring/ring-defaults "0.3.2"]
                  [org.xerial/sqlite-jdbc "3.42.0.0"]
                  [org.clojure/java.jdbc "0.7.12"]
-                 [honeysql "1.0.461"]]
+                 [honeysql "1.0.461"]
+                 [faker "0.3.2"]]
   :main ^:skip-aot sql-server.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
