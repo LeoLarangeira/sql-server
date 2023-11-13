@@ -5,9 +5,6 @@
             [cheshire.core :refer :all]
             [honeysql.core :as sql]))
 
-;select all the first five users 
-
-;select * from users LIMIT 5
 
 (defn get-five-users []
   
@@ -25,4 +22,9 @@
     )
   )
 
-#_(jdbc/query db/db "select * from user;")
+(honey/format {
+               :select [:*] :from [:user] :where [:= :id 2]
+})
+(defn get-user-id [id]
+  (let [result (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id id]}))]
+    (generate-string result)))

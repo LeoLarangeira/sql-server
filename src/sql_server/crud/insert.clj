@@ -1,26 +1,27 @@
 (ns sql-server.crud.insert
   (:require [honeysql.format :as honey]
             [honeysql.core :as sql]
+            [honeysql.helpers :refer :all]
             [clojure.java.jdbc :as jdbc] 
-            [sql-server.components.db :as db])) 
-
-#_(honey/format {:insert-into :user
-                 :values [{:name name
-                           :email email
-                           :address address}]})
+            [sql-server.components.db :as db]))
 
 
 
 
-#_(defn insert-users! [name email address]
-  (jdbc/db-do-commands db/db "insert into user (name,email, address)
-                                                                                  values ('Leo','teste@mail.com','outro endereco')"
-                        ))
+;(honey/format {:select [:count :*] :from [:user]})
+
 
 (defn insert-user! [name email address]
-  (jdbc/execute! db/db
-                 ["INSERT INTO user (name, email, address) VALUES (?, ?, ?)"
-                  name email address]))
+  (let [user (jdbc/execute! db/db
+                            ["INSERT INTO user (name, email, address) VALUES (?, ?, ?)"
+                             name email address])
+        _ (println "insert user function" user)])
 
-#_(insert-user "John" "john@example.com" "123 Main St")
-;(insert-users! "leo" "test@mail.com" "outro endereco")
+  )
+
+#_(defn count-users []
+  (let [total (jdbc/execute! db/db (honey/format {:select [:count :*] :from [:user]
+                                                  }
+                                                 ))
+        ]
+    (str  total)))
