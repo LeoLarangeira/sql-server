@@ -12,7 +12,14 @@
 (defn start-db []
   (let [spec {:connection-uri db}
         conn (jdbc/get-connection spec)]
-    (assoc spec :connection conn)))
+    (assoc spec :connection conn))
+  (jdbc/db-do-commands db "CREATE TABLE IF NOT EXISTS user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    address TEXT NOT NULL 
+);" )
+  )
 
 
 

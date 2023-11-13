@@ -4,7 +4,7 @@
             [honeysql.format :as honey]))
 
 
-(defn create-tables [db]
+#_(defn create-tables []
   
   (let [query (str "create table if not exists user(
                     id_user int not null primary-key autoincrement,
@@ -12,7 +12,7 @@
                     email text not null,
                     address text not null,
   )" )]
-    (jdbc/db-do-commands db query))
+    (jdbc/db-do-commands db/db query))
   )
 
 

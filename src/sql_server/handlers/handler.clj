@@ -1,10 +1,26 @@
 (ns sql-server.handlers.handler
-  (:require [compojure.core :refer :all]))
+  (:require [compojure.core :refer :all]
+            [sql-server.crud.insert :as i]
+            [cheshire.core :refer :all]
+            [faker.name :as fkn]
+            [faker.address :as fka]))
+
+(def user-name (fkn/first-name))
+(def email (str user-name "@teste.com"))
+(def address (fka/street-address))
 
 
 (defn create-user []
   ;this function will recieve the req from routes and return a map with the new user
-  
+  (let [user (i/insert-user! user-name email address )
+        _ (println user)
+        user-string (generate-string user)
+        _ (println user-string)]
+    {
+     :status 200
+     :headers  {"Content-Type" "application/json; charset=utf-8"}
+     :body user-string
+    })
   )
 
 (defn delete-user [id]
