@@ -1,44 +1,40 @@
-# sql-server
 
-FIXME: description
+# Um Pequeno Servidor para Banco de Usuários em Clojure
 
-## Installation
+Este é um servidor simples e básico desenvolvido em Clojure para gerenciar um banco de usuários. A implementação utiliza principalmente a biblioteca HoneySQL para facilitar a criação e execução de consultas SQL.
 
-Download from http://example.com/FIXME.
 
-## Usage
+## Funcionalidades Principais
 
-FIXME: explanation
+- CRUD de Usuários: Realize operações básicas de criação, leitura, atualização e exclusão de usuários.
+- Consulta Simplificada: Aproveite a praticidade da biblioteca HoneySQL para simplificar a criação de consultas SQL de forma programática.
 
-    $ java -jar sql-server-0.1.0-standalone.jar [args]
+## Requisitos
 
-## Options
+- [Clojure](https://clojure.org/guides/getting_started)
 
-FIXME: listing of options this app accepts.
 
-## Examples
+## Como Usar
 
-...
+_1. Clone o Repositório:_
 
-### Bugs
 
-...
+```bash
+  git clone https://github.com/LeoLarangeira/sql-server
+  cd sql-server
+```
+_2. Execute o Servidor:_
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+```bash
+lein run
+```
+_3. Acesse a API:_
 
-## License
+- Endpoint base: http://localhost:8000/users
+- Explore diferentes endpoints para realizar operações diferentes operações no banco de dados
 
-Copyright © 2023 FIXME
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+## Contribuições
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+Sinta-se à vontade para contribuir, reportar problemas ou fazer sugestões. Toda colaboração é bem-vinda!
+
