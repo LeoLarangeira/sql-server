@@ -1,1 +1,1 @@
-["^ ","~$-main",["^ ","~:row",7,"~:col",1,"~:varargs-min-arity",0,"~:name","^0","~:ns","~$sql-server.core","~:top-ns","^6","~:arities",["^ ","~:varargs",["^ ","~:ret","~:nil","~:min-arity",0,"~:arglist-str","[& args]"]],"~:type","~:fn"],"~:filename","/home/leonardo/Desktop/sql-server/src/sql_server/core.clj"]
+["^ ","~$-main",["^ ","~:row",7,"~:col",1,"~:fixed-arities",["~#set",[0]],"~:name","^0","~:ns","~$sql-server.core","~:top-ns","^7","~:type","~:fn"],"~:filename","/home/leonardo/Desktop/sql-server/src/sql_server/core.clj"]

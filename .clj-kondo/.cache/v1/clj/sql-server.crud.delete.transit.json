@@ -1,1 +1,1 @@
-["^ ","~$delete-user!",["^ ","~:row",16,"~:col",1,"~:fixed-arities",["~#set",[1]],"~:name","^0","~:ns","~$sql-server.crud.delete","~:top-ns","^7","~:type","~:fn"],"~:filename","/home/leonardo/Desktop/sql-server/src/sql_server/crud/delete.clj"]
+["^ ","~$delete-user!",["^ ","~:row",8,"~:col",1,"~:fixed-arities",["~#set",[1]],"~:name","^0","~:ns","~$sql-server.crud.delete","~:top-ns","^7","~:type","~:fn"],"~:filename","/home/leonardo/Desktop/sql-server/src/sql_server/crud/delete.clj"]

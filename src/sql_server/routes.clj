@@ -9,12 +9,23 @@
 
 
 (defroutes routes
-  (GET "/users" [req] 
-    (search/get-five-users )) 
-  (POST "/users"[req] ""
-    (handler/create-user))
-  (PUT "/users/:id/:name" [id name] ""
-    (up/update-user! id name))
-  (DELETE "users-delete/:id" [id] ""
+  ;; GET request to retrieve information about five users
+  (GET "/users" [req]
+    (search/get-five-users))
+
+  ;; POST request to create a new user
+  (POST "/users" [req]
+    (handler/create-user)
+    "User created successfully") ; A success message returned to the client
+
+  ;; PUT request to update a user's information
+  (PUT "/users/:id/:name" [id name]
+    (up/update-user! id name)
+    "<h1>User updated successfully</h1>") ; A success message returned to the client
+
+  ;; DELETE request to delete a user
+  (DELETE "/users/:id" [id]
     (del/delete-user! id))
-  (route/not-found "<h1> Não conseguir achar </h1>"))
+
+  ;; Catch-all route for any other requests
+  (route/not-found "<h1>Not Found</h1>"))

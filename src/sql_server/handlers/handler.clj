@@ -9,42 +9,29 @@
             [clojure.java.jdbc :as jdbc]
             [sql-server.crud.search :as search]))
 
-(def user-name (fkn/first-name))
+(def user-name (fkn/first-name))  ; Assuming fkn is a namespace for functions related to first names
 (def email (str user-name "@teste.com"))
-(def address (fka/street-address))
-
+(def address (fka/street-address))  ; Assuming fka is a namespace for functions related to street addresses
 
 (defn create-user []
-  ;this function will recieve the req from routes and return a map with the new user
-  (let [user (i/insert-user! user-name email address )
-        _ (println "user" user)
-        user-string (generate-string user)
-        _ (println "user sting "user-string)]
-    {
-     :status 200
-     :headers  {"Content-Type" "application/json; charset=utf-8"}
-     :body (str "Usuário inserido com sucesso, temos um total de:" 1 " usuarios")
-    })
-  )
+  ; This function will receive a request from routes and return a map with the new user
+  (let [user (i/insert-user! user-name email address) 
+        user-string (generate-string user)]
+    {:status 200
+     :headers {"Content-Type" "application/json; charset=utf-8"}
+     :body (str "Usuário inserido com sucesso, temos um total de:" 1 " usuarios")}))
 
 (defn delete-user [id]
-  ;this function will receive the id from the user and  will delete him
+  ; This function will receive the id from the user and will delete them
   (let [deleted-user (del/delete-user! id)]
     {:status 200
-     :headers  {"Content-Type" "application/json; charset=utf-8"}
-     :body (str "Usuário deletado com sucesso")})
-  )
+     :headers {"Content-Type" "application/json; charset=utf-8"}
+     :body (str "Usuário deletado com sucesso")}))
 
 (defn uptade-user-name [id name]
+  ; This function will update the user's name based on the provided id
   (let [update-user (up/update-user! id name)
         new-user (search/get-user-id id)]
-    
-
     {:status 200
-     :headers  {"Content-Type" "application/json; charset=utf-8"}
-     :body new-user})
-  )
-
-(defn get-all-user []
-  ;this function will return all the 5 first users
-  )
+     :headers {"Content-Type" "application/json; charset=utf-8"}
+     :body new-user}))

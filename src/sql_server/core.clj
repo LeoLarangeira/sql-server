@@ -5,11 +5,13 @@
             [ring.adapter.jetty :as jetty]))
 
 (defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (db/start-db) 
-  (jetty/run-jetty r/routes {:port 8000
-                             :join? true
-                             :daemon? true})
-  (println "Hello, World!")
-  (db/stop-db))
+  []
+  ;; Start the database
+  (db/start-db)
+
+  ;; Run the Jetty server with specified routes and configurations
+  (jetty/run-jetty r/routes
+                   {:port 8000        ;; Set the server port to 8000
+                    :join? true       ;; Wait for the server to join before returning
+                    :daemon? true}))  ;; Run the server as a daemon process
+
