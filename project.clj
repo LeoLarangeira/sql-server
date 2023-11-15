@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [cheshire "5.12.0"]
                  [compojure "1.6.1"]
+                 [com.brunobonacci/mulog "0.9.0"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-jetty-adapter "1.9.6"]
                  [org.xerial/sqlite-jdbc "3.42.0.0"] 

@@ -4,14 +4,26 @@
 ; Please see https://calva.io/output/ for more info.
 ; Happy coding! ♥️
 
-; Aborting connect, error determining connect sequence.
+; Jacking in...
+; Connecting using "undefined" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Aborting jack-in. No project type selected.
 ; Jacking in...
 ; Connecting using "Leiningen" project type.
 ; You can make Calva auto-select this.
 ;   - See https://calva.io/connect-sequences/
 ; 
 ; Starting Jack-in Terminal: pushd /home/leonardo/Desktop/sql-server ; lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless ; popd
-; Using host:port 127.0.0.1:36853 ...
+; Interrupting Jack-in process.
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: pushd /home/leonardo/Desktop/sql-server ; lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless ; popd
+; Using host:port 127.0.0.1:33685 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; TIPS:
@@ -28,95 +40,34 @@ clj꞉sql-server.core꞉> 
 ; Jack-in done.
 clj꞉sql-server.core꞉> 
 nil
-clj꞉sql-server.routes꞉> 
+clj꞉sql-server.dto.convert꞉> 
+#'sql-server.dto.convert/user-dto
+clj꞉sql-server.dto.convert꞉> 
+#'sql-server.dto.convert/user-test
+clj꞉sql-server.dto.convert꞉> 
+[:user/name nil]
 nil
-clj꞉sql-server.routes꞉> 
-#function[compojure.core/wrap-route-matches/fn--3684]
-clj꞉sql-server.routes꞉> 
-; Syntax error compiling at (src/sql_server/routes.clj:1:7934).
-; Can't take value of a macro: #'compojure.core/DELETE
-clj꞉sql-server.routes꞉> 
-["DELETE * FROM user WHERE id = ?" 2]
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (SQLiteException) at org.sqlite.core.DB/newSQLException (DB.java:1179).
-; [SQLITE_ERROR] SQL error or missing database (near "*": syntax error)
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (SQLiteException) at org.sqlite.core.DB/newSQLException (DB.java:1179).
-; [SQLITE_ERROR] SQL error or missing database (near "name": syntax error)
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (SQLiteException) at org.sqlite.core.DB/newSQLException (DB.java:1179).
-; [SQLITE_ERROR] SQL error or missing database (near "name": syntax error)
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-["DELETE user WHERE id_user = ?" 2]
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-["DELETE user FROM user WHERE id_user = ?" 2]
-clj꞉sql-server.crud.delete꞉> 
-["DELETE name, id_user, address FROM user WHERE id_user = ?" 2]
-clj꞉sql-server.crud.delete꞉> 
-["DELETE id_user, name, address FROM user WHERE id_user = ?" 2]
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (SQLiteException) at org.sqlite.core.DB/newSQLException (DB.java:1179).
-; [SQLITE_ERROR] SQL error or missing database (near "id_user": syntax error)
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (AssertionError) at honeysql.format/seq->sql (format.cljc:385).
-; Assert failed: Alias should have two parts[:user]
-; (= 2 (count x))
-clj꞉sql-server.crud.delete꞉> 
-["DELETE FROM customer WHERE id = ?" 5]
-clj꞉sql-server.crud.delete꞉> 
-["DELETE FROM user WHERE id = ?" 5]
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (SQLiteException) at org.sqlite.core.DB/newSQLException (DB.java:1179).
-; [SQLITE_ERROR] SQL error or missing database (no such column: id)
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (AssertionError) at honeysql.format/seq->sql (format.cljc:385).
-; Assert failed: Alias should have two parts[:user]
-; (= 2 (count x))
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (AssertionError) at honeysql.format/seq->sql (format.cljc:385).
-; Assert failed: Alias should have two parts[:user]
-; (= 2 (count x))
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (SQLiteException) at org.sqlite.core.DB/newSQLException (DB.java:1179).
-; [SQLITE_ERROR] SQL error or missing database (no such column: id)
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-; Syntax error compiling at (src/sql_server/crud/delete.clj:16:25).
-; Unable to resolve symbol: id in this context
-clj꞉sql-server.crud.delete꞉> 
-; Syntax error compiling at (src/sql_server/crud/delete.clj:12:3).
-; Unable to resolve symbol: id in this context
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-["DELETE FROM user WHERE id = ?" 5]
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (ClassCastException) at clojure.java.jdbc/db-do-commands (jdbc.clj:954).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉sql-server.crud.delete꞉> 
-; Execution error (SQLiteException) at org.sqlite.core.DB/newSQLException (DB.java:1179).
-; [SQLITE_ERROR] SQL error or missing database (no such column: id)
-clj꞉sql-server.crud.delete꞉> 
-(1)
-clj꞉sql-server.crud.delete꞉> 
+clj꞉sql-server.dto.convert꞉> 
+#:user{:name nil, :email nil, :address nil}
+clj꞉sql-server.dto.convert꞉> 
+#'sql-server.dto.convert/user-test
+clj꞉sql-server.dto.convert꞉> 
+{:name "Leo", :email "teste@mail.com", :address "teste rua"}
+clj꞉sql-server.dto.convert꞉> 
+#'sql-server.dto.convert/dto->user
+clj꞉sql-server.dto.convert꞉> 
+; Syntax error compiling at (src/sql_server/dto/convert.clj:14:17).
+; Unable to resolve symbol: user->dto in this context
+clj꞉sql-server.dto.convert꞉> 
+; Execution error (ArityException) at sql-server.dto.convert/eval8042 (form-init14980611052671236905.clj:13).
+; Wrong number of args (0) passed to: clojure.lang.PersistentArrayMap
+clj꞉sql-server.dto.convert꞉> 
+#'sql-server.dto.convert/user->dto
+clj꞉sql-server.dto.convert꞉> 
+{:name "Leo", :email "teste@mail.com", :address "teste rua"}
+clj꞉sql-server.dto.convert꞉> 
+[:user/name nil]
+nil
+clj꞉sql-server.dto.convert꞉> 
+#function[clojure.core/map/fn--5931]
+clj꞉sql-server.dto.convert꞉> 

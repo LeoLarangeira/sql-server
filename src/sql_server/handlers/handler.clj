@@ -3,6 +3,7 @@
             [sql-server.crud.insert :as i]
             [sql-server.crud.update :as up]
             [sql-server.crud.delete :as del]
+            [sql-server.crud.search :as sc]
             [cheshire.core :refer :all]
             [faker.name :as fkn]
             [faker.address :as fka]
@@ -35,3 +36,17 @@
     {:status 200
      :headers {"Content-Type" "application/json; charset=utf-8"}
      :body new-user}))
+
+
+(defn search-user [id]
+  (println id)
+  (let [user (sc/get-user-dto-id id)
+        _ (println "user->" user)
+        _ (println "type->" (type user))
+        str-convert (str user)
+        _ (println "convert->" str-convert)
+        _ (println "convert->type" (type str-convert))]
+    {
+     :status 200
+     :body str-convert
+    }))

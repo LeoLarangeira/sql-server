@@ -9,9 +9,15 @@
 
 
 (defroutes routes
+  ;; Defines routes for handling various HTTP requests related to user management.
+
   ;; GET request to retrieve information about five users
   (GET "/users" [req]
     (search/get-five-users))
+
+  ;; Trying to make a dto (Data Transfer Object)
+  (GET "/users/:id" [id]
+    (handler/search-user id))
 
   ;; POST request to create a new user
   (POST "/users" [req]
@@ -29,3 +35,4 @@
 
   ;; Catch-all route for any other requests
   (route/not-found "<h1>Not Found</h1>"))
+
