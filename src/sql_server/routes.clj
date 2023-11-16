@@ -21,8 +21,7 @@
 
   ;; POST request to create a new user
   (POST "/users" [req]
-    (handler/create-user)
-    "User created successfully") ; A success message returned to the client
+    (handler/create-user)) ; A success message returned to the client
 
   ;; PUT request to update a user's information
   (PUT "/users/:id/:name" [id name]

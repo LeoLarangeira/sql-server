@@ -17,10 +17,10 @@
 (defn create-user []
   ; This function will receive a request from routes and return a map with the new user
   (let [user (i/insert-user! user-name email address) 
-        user-string (generate-string user)]
+       counted (i/count-users)]
     {:status 200
      :headers {"Content-Type" "application/json; charset=utf-8"}
-     :body (str "Usuário inserido com sucesso, temos um total de:" 1 " usuarios")}))
+     :body (str "Usuário inserido com sucesso, temos um total de:" counted " usuarios")}))
 
 (defn delete-user [id]
   ; This function will receive the id from the user and will delete them
