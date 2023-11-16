@@ -26,12 +26,12 @@
   ; This function retrieves information for a user with the specified id from the "user" table using JDBC.
   ; It constructs a query using the honey library, specifying the SELECT and FROM clauses,
   ; and filtering the result based on the provided id. The result is then returned as a JSON response.
-  (let [result (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id id]}))
+  (let [result (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id_user id]}))
         _ (println result)]
     (generate-string result)))
 
 
 (defn get-user-dto-id [id]
   (->> (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id_user id]}))
-       (ffirst)
+      (first)
        (convert/user->dto)))

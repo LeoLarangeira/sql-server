@@ -39,14 +39,12 @@
 
 
 (defn search-user [id]
-  (println id)
-  (let [user (sc/get-user-dto-id id)
-        _ (println "user->" user)
-        _ (println "type->" (type user))
-        str-convert (str user)
-        _ (println "convert->" str-convert)
-        _ (println "convert->type" (type str-convert))]
-    {
-     :status 200
-     :body str-convert
-    }))
+  (let [user (sc/get-user-dto-id id) ; Assuming this function retrieves a user by ID
+        user-str (str user)            ; Convert the user to a string
+        response {:status 200           ; Create the response map
+                  :body user-str}]
+    (println "user->" user)            ; Optional: Print information for debugging
+    (println "type->" (type user))
+    (println "convert->" user-str)
+    (println "convert->type" (type user-str))
+    response))                         ; Return the response map
