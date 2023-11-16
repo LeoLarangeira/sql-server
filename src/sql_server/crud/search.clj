@@ -27,11 +27,16 @@
   ; It constructs a query using the honey library, specifying the SELECT and FROM clauses,
   ; and filtering the result based on the provided id. The result is then returned as a JSON response.
   (let [result (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id_user id]}))
-        _ (println result)]
-    (generate-string result)))
+        first-reslt (first result)]
+    first-reslt))
 
 
 (defn get-user-dto-id [id]
   (->> (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :id_user id]}))
       (first)
+       (convert/user->dto)))
+
+(defn get-user-by-name [name]
+  (->> (jdbc/query db/db (honey/format {:select [:*] :from [:user] :where [:= :name name]}))
+       (first)
        (convert/user->dto)))

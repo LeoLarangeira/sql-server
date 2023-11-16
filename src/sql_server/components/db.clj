@@ -14,7 +14,7 @@
     (assoc spec :connection conn))  ; Associates the database connection with the spec map
 
   (jdbc/db-do-commands db "CREATE TABLE IF NOT EXISTS user (
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    id_user INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     name TEXT NOT NULL,
     email TEXT NOT NULL,
     address TEXT NOT NULL 

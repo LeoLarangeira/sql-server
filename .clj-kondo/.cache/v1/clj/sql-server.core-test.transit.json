@@ -1,1 +1,1 @@
-["^ ","~$mysql-tests",["^ ","~:row",5,"~:col",1,"~:fixed-arities",["~#set",[0]],"~:name","^0","~:ns","~$sql-server.core-test","~:top-ns","^7"],"~:filename","/home/leonardo/Desktop/sql-server/test/sql_server/core_test.clj"]
+["^ ","~$insert-test",["^ ","~:row",8,"~:col",1,"~:fixed-arities",["~#set",[0]],"~:name","^0","~:ns","~$sql-server.core-test","~:top-ns","^7"],"~:filename","/home/leonardo/Desktop/sql-server/test/sql_server/core_test.clj"]

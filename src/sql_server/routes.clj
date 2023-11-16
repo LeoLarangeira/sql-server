@@ -19,6 +19,7 @@
   (GET "/users/:id" [id]
     (handler/search-user id))
 
+
   ;; POST request to create a new user
   (POST "/users" [req]
     (handler/create-user)) ; A success message returned to the client
